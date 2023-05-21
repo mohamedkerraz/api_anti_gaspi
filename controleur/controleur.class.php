@@ -52,6 +52,18 @@
 						$tabrecup = $redis->hGetAll($unClient['email']+"_data");
 						var_dump($tabrecup);
 
+
+
+						$redis = new Redis();
+	
+						$redis->connect('127.0.0.1', 6379);
+				
+						$redis->set("tata", "tutu", 900);
+				
+						$redis->close();
+
+
+
 				return "[".json_encode($tabrecup)."]";	
 				}
 			
